@@ -1,0 +1,30 @@
+{
+  "_description": "Merge these hooks into ~/.claude/settings.json",
+  "_note": "These hooks work alongside pai-voice-system hooks if both are installed",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bun run $PAI_DIR/hooks/stop-hook-notification.ts"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bun run $PAI_DIR/hooks/subagent-stop-hook-notification.ts"
+          }
+        ]
+      }
+    ]
+  },
+  "env": {
+    "OBSERVABILITY_URL": "http://localhost:4000",
+    "_description": "Default observability server URL. Change if using custom port."
+  }
+}
